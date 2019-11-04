@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User, Group
-from api.models import Fart
+from api.models import Fart, Type
 from rest_framework import serializers
 
 
@@ -24,5 +24,7 @@ class FartSerializer(serializers.HyperlinkedModelSerializer):
         fields = ['user', 'score', 'type', 'smell_scale', 'noise_scale', 'city', 'date_farted']
 
 
-
-
+class TypeSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Type
+        fields = ['name']
