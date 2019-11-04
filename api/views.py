@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User, Group
-from api.models import Fart
+from api.models import Fart, Type
 from rest_framework import viewsets
-from api.serializers import UserSerializer, GroupSerializer, FartSerializer
+from api.serializers import UserSerializer, GroupSerializer, FartSerializer, TypeSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -32,3 +32,10 @@ class FartViewSet(viewsets.ModelViewSet):
     queryset = Fart.objects.all()
     serializer_class = FartSerializer
 
+class TypeViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows farts to be viewed or edited.
+    """
+
+    queryset = Type.objects.all()
+    serializer_class = TypeSerializer
