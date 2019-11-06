@@ -18,10 +18,11 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
 
 
 
-class FartSerializer(serializers.ModelSerializer):
+class FartSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Fart
-        fields = ['user.username', 'score', 'type.name', 'smell_scale', 'noise_scale', 'city', 'date_farted']
+        fields = ['user', 'score', 'type', 'smell_scale', 'noise_scale', 'city', 'date_farted']
+        depth = 1
 
 
 class TypeSerializer(serializers.HyperlinkedModelSerializer):
