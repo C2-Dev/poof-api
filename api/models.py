@@ -17,7 +17,7 @@ class Fart(models.Model):
     city = models.TextField(blank=True, null=True, default='Flavor Town')
     state = models.TextField(blank=True, null=True, default='BFE')
     score = models.PositiveIntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(9999)])
-    type = models.ForeignKey(Type, related_name='fartType', on_delete=models.CASCADE)
+    ftype = models.ForeignKey(Type, related_name='fartType', on_delete=models.CASCADE)
     noise_scale = models.PositiveIntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(10)])
     smell_scale = models.PositiveIntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(10)])
     exposures = models.PositiveIntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(100000000)])
