@@ -6,7 +6,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
 
-class Type(models.Model):
+class FartType(models.Model):
         name = models.CharField(max_length=32)
 
         def __str__(self):
