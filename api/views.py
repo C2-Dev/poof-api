@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User, Group
-from api.models import Fart, Type
+from api.models import Fart, FartType
 from rest_framework import viewsets
 from api.serializers import UserSerializer, GroupSerializer, FartSerializer, TypeSerializer
 
@@ -37,5 +37,5 @@ class TypeViewSet(viewsets.ModelViewSet):
     API endpoint that allows farts to be viewed or edited.
     """
 
-    queryset = Type.objects.all()
+    queryset = FartType.objects.all()
     serializer_class = TypeSerializer
