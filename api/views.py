@@ -29,8 +29,7 @@ class FartViewSet(viewsets.ModelViewSet):
     API endpoint that allows farts to be viewed or edited.
     """
 
-    #queryset = Fart.objects.all()
-    #serializer_class = FartSerializer
+    serializer_class = FartSerializer
     def get_queryset(self):
             """
             Optionally restricts the returned purchases to a given user,
