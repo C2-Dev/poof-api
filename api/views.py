@@ -39,7 +39,7 @@ class FartViewSet(viewsets.ModelViewSet):
             queryset = Fart.objects.all()
             username = self.request.query_params.get('username', None)
             if username is not None:
-                queryset = queryset.filter(user.username=username)
+                queryset = queryset.filter(user__username=username)
             return queryset
 
 class TypeViewSet(viewsets.ModelViewSet):
